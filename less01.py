@@ -41,8 +41,10 @@ while answer != 'q':
             file_list = os.listdir()
             i = 0
             while i < len(file_list):
-                newfile = file_list[i] + '.dupl'
-                shutil.copy(file_list[i], newfile)#копируй
+                # Необходимо выполнить проверку isfile, т.к. при попытке копирования директории будет возникать ошибка
+                if os.path.isfile(file_list[i]):
+                    shutil.copy(file_list[i], file_list[i] + '.dupl')
+                # Чтобы цикл имел возможность завершиться нужно изменять переменную цикла        
                 i += 1    
         else:
             pass
