@@ -1,5 +1,6 @@
 # coding : utf-8
 
+# подключаем модули
 import os
 import psutil    # стороний модуль
 import shutil
