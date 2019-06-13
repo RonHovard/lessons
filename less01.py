@@ -51,7 +51,7 @@ while answer != 'q':
             print("Файлы в этой директории: ")
             files = os.listdir()
             print(files)
-            index = int(input("Укажите индекс файл, который нужно дублировать: "))
+            index = int(input("Укажите индекс файла, который нужно дублировать: "))
             shutil.copy(files[index], files[index] + '.dupl')
         else:
             pass
