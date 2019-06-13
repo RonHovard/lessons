@@ -55,6 +55,17 @@ while answer != 'q':
             if os.path.isfile(filename):
                 newfile = filename + '.dupl'
                 shutil.copy(filename, newfile)
+        elif do == 6:
+            print("Удаление дубликатов в директории ")
+            dirname = input("Укажите имя директории: ")
+            file_list = os.listdir(dirname)
+            i = 0
+            while i < len(file_list):
+                fullname = os.path.join(dirname, file_list[i])
+                if fullname.endswith('.dupl'):
+                    os.remove(fullname)
+                i += 1    
+                            
         else:
             pass
     elif answer == 'N':
