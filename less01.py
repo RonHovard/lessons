@@ -28,8 +28,6 @@ def sys_info():
 
 def remove_dupl(dirname):
     file_list = os.listdir(dirname)
-    #i = 0
-    #while i < len(file_list):
     count_remote_dupl = 0
     for f in file_list:
         fullname = os.path.join(dirname, f)
@@ -37,7 +35,7 @@ def remove_dupl(dirname):
             os.remove(fullname)
             count_remote_dupl += 1
     return print("Было удалено дубликатов: ", count_remote_dupl)        
-        #i += 1    
+            
 
 
 # Комментарий
