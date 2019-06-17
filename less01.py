@@ -2,9 +2,10 @@
 
 # подключаем модули
 import os
-import psutil    # стороний модуль
 import shutil
 import sys
+
+import psutil    # стороний модуль
 
 # Комментарий
 
@@ -40,7 +41,7 @@ while answer != 'q':
         elif do == 3:
             print(psutil.pids())
         elif do == 4:
-            print("Дублирование файлов в текущей директории:")
+            print("Продублировал файлы в текущей директории")
             file_list = os.listdir()
             i = 0
             while i < len(file_list):
@@ -75,4 +76,4 @@ while answer != 'q':
         
 
 
-
+                                                                                
