@@ -73,7 +73,6 @@ while answer != 'q':
             file_list = os.listdir()
             i = 0
             while i < len(file_list):
-                # Необходимо выполнить проверку isfile, т.к. при попытке копирования директории будет возникать ошибка
                 duplicate_file(file_list[i])
                 i += 1
         elif do == 5:
