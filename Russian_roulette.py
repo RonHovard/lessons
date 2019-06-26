@@ -22,7 +22,7 @@ def draw_drum(i):    #Рисует гнёзда в виде анимации
     draw_circle(22, 'white')
 
 turtle.speed(0)
-gotoxy(-170,300)
+gotoxy(-180,300)
 turtle.write("Игра: 'РУССКАЯ РУЛЕТКА'", font=("Arial", 30, "normal"))
 
 gotoxy(0,0)
@@ -37,16 +37,23 @@ draw_circle(45, 'grey')
 bull_count = turtle.textinput("Введи кол-во гнёзд.", "не больше 7")
 bull_count = int(bull_count)
 
-phi = 360 / bull_count
-phi_rad = phi * math.pi / 180.0
-r = 50
+phi = 360 / bull_count           #считаем угол в градусах
+phi_rad = phi * math.pi / 180.0  #переводим в радианы
+r = 50              #радиус по которому будут расположены гнёзда
 
 for i in range(0,bull_count):  
     draw_drum(i)
 answer = ''
 start = 0
+turtle.hideturtle()
 while answer != 'N':
     answer = turtle.textinput("Сыграем?", "Y/N")
+    gotoxy(-130, 250)
+    turtle.color('white')
+    turtle.width(60)
+    turtle.forward(350)
+    turtle.color('black')
+    turtle.width(1)
     if answer == 'Y':
         for i in range(start,random.randrange(bull_count,100)):    
             draw_drum(i)
@@ -56,7 +63,10 @@ while answer != 'N':
         start = i % bull_count
         if start == 0:
             gotoxy(-60,250)
-            turtle.write("Tы убит!", font=("Arial", 24, "normal")) 
+            turtle.write("Tы убит!", font=("Arial", 24, "normal"))
+        else:
+            gotoxy(-100,250)
+            turtle.write("Повезло! Ты жив!", font=("Arial", 24, "normal"))            
         
     else:
         pass
