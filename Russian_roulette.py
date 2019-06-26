@@ -23,26 +23,28 @@ turtle.circle(80)
 gotoxy(0,160)
 draw_circle(5, 'red')
 
-phi = 360 / 7
+phi = 360 / 6
+phi_rad = phi * math.pi / 180.0
 r = 50
 
 for i in range(0,7):  
-    phi_rad = phi * i * math.pi / 180.0
-    gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)     
+    angle = phi_rad * i
+    gotoxy(math.sin(angle)*r, math.cos(angle)*r + 60)     
+    draw_circle(22, 'brown')
     draw_circle(22, 'white')
 answer = ''
 start = 0
 while answer != 'N':
     answer = turtle.textinput("Сыграем?", "Y/N")
     if answer == 'Y':
-        for i in range(start,8): #random.randrange(7,100)   
-            phi_rad = phi * i * math.pi / 180.0
-            gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
+        for i in range(start,random.randrange(7,100)):    
+            angle = phi_rad * i
+            gotoxy(math.sin(angle)*r, math.cos(angle)*r + 60)
             draw_circle(22, 'brown')
             draw_circle(22, 'white')
         
         
-        gotoxy(math.sin(phi_rad)*r, math.cos(phi_rad)*r + 60)
+        #gotoxy(math.sin(angle)*r, math.cos(angle)*r + 60)
         draw_circle(22, 'brown')
         
         start = i % 7
