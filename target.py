@@ -4,14 +4,18 @@ import turtle
 import random
 import math
 
-turtle.speed(6)
-
-for i in range(30, 180, 30):
-    #turtle.fillcolor(random.random(),random.random(),random.random())
-    #turtle.begin_fill()
+def gotoxy(x,y):
     turtle.penup()
-    turtle.goto(0,-i)
+    turtle.goto(x,y)
     turtle.pendown()
-    turtle.circle(i)
-    #turtle.end_fill()
 
+turtle.speed(0)
+
+for i in range(265, 10, -30):
+    gotoxy(0,-i)
+    turtle.fillcolor(random.random(),random.random(),random.random())
+    turtle.begin_fill()
+    turtle.circle(i)
+    turtle.end_fill()
+
+turtle.textinput("TARGET", "")
